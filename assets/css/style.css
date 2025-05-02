@@ -1,0 +1,304 @@
+:root{
+
+    /* paleta de colores */
+    --color-accent: #8a9772;
+    --background: #f7f3f333;
+
+    /*tipografia */
+    --font-heading: "Cormorant Garamond", serif;
+    --font: "Libre Caslon Display", serif;
+
+    /*transiciones*/
+    --transition-fast: 0.3s ease;
+    --transition-medium: 0.5s ease;
+    --transition-slow: 0.8s ease;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+body{
+    background-color: var(--background);
+}
+ /*AMENINITIES = HEADER */
+
+.amenities{
+    margin: 20px;
+    border-bottom: 1px solid var(--color-accent);
+    font-family: var(--font);
+}
+
+
+.amenities__subtitle {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    letter-spacing: 0.10em;
+    margin-bottom: 0.25rem;
+    position: relative;
+    text-align: center;
+}
+  
+.amenities__heading {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size:3rem;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.amenities__heading::before,
+.amenities__heading::after{
+    content: '';
+    height: 1px;
+    background-color: var(--color-accent);
+    flex: 1;
+    margin: 10px;
+}
+
+.ameneties_columns{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+.amenities_item{
+    margin: 20px;
+
+}
+.amenities_item::marker{
+    color: var(--color-accent);
+}
+
+/* SECCION DEL SLIDER */
+.location{
+    margin: 60px auto;
+    position: relative;
+    background-image: url('/assets/img/banner1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    transition: opacity var(--transition-fast);
+}
+
+.location::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #a1ae8ac9;
+    z-index: 1;
+}
+
+.location_card, .menu_card{
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    margin: 70px auto;
+    display: flex;
+    width: 70%;
+    max-width: 1200px;
+    overflow: hidden;
+    
+}
+
+.location.is-fading{
+    opacity: 0;
+}
+.location_card_info,
+.location_card_media{
+  flex: 1;                  /* 50% cada una */
+}
+.location_card_info{
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2.5em;
+    
+}
+.location_card_info_titles{
+    margin: 15%;
+}
+.location_card_subtitle{
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    color: var(--color-accent);
+}
+.location_card_heading{
+    margin: 15px 0;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.location_card_text, .menu_card_text{
+line-height: 1.7;                  
+  max-width: 80%;                   
+  margin: 2em 0;                  
+  margin-bottom: 2rem;                                      
+}
+.location_card_btn_info{
+    background: none;
+    border: none;
+    line-height: 1;           
+    width: 4rem;              
+    height: 4rem;
+    cursor: pointer;
+}
+
+.location_card_btn_info a:hover{
+    color: #8a9772;
+}
+.location_card_media{
+    position: relative;
+    overflow: visible;
+}
+.location_card_number{
+    position: absolute;
+    bottom: -1rem;
+    right: 0.5rem;
+    font-size: 7rem;
+    color: white;
+    z-index: 9999;
+}
+
+/*MENU ARTICLE */
+
+.menu_card {
+    gap: 30px;
+}
+.menu_card_img, .menu_card_info{
+    flex: 1;
+
+}
+.menu_card_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.menu_card_subtitle{
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+}
+.menu_card_title{
+    font-family: var(--font-heading);
+    text-transform: capitalize;
+    font-size: 3em;
+    font-weight: 500;
+}
+
+.menu_card_btn a{
+   text-decoration: none;
+    background-color: #b1c193;
+    padding: 10px 40px;
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 0.15em;
+    border: 1px solid #b1c193;
+    transition: .2s ease-in-out;
+}
+.menu_card_btn a:hover{
+    color: whitesmoke;
+    background-color: rgb(17, 84, 10);
+    font-weight: bolder;
+}
+
+/*RESPONSIVE */
+
+@media screen and (max-width:480px){
+    .ameneties_columns{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ameneties_column{
+        width: 100%;
+    }
+    
+    .amenities_item{
+        position: relative;
+    padding: 0.5em 0 0.5em 1.5em;  /* sangrado para el punto */
+    font-size: 1rem;
+    line-height: 1.5;
+    }
+    .amenities_list{
+        margin: 0;
+        padding: 0 ;
+    }
+    .amenities__item::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 0.5em;
+        height: 0.5em;
+        background-color: var(--color-accent);
+        border-radius: 50%;
+        transform: translateY(-50%);
+      }
+
+    .location, .location::before{
+        background: none;
+        background-image: none;
+    }
+    .location_card{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        min-height: 50vh;
+    }
+    .location_card_info, .location_card_media{
+        flex: 1;
+    }
+
+    .location_card_info_titles{
+        width: 100%;
+        margin: 20px;
+    }
+    .location_card_text{
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .menu_card{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .menu_card_text{
+        max-width: 100%;
+    }
+
+}
+@media  screen and (min-width: 720px) {
+
+
+    .location_card{
+        flex-direction: row; /* sigue apilado en tablet */
+        width: 100%;  
+        margin: 60px 20px;
+    }
+    .menu_card_text{
+        max-width: 100%;
+    }
+    .menu_card_btn a{
+        text-align: center;
+        padding: 10px 30px;
+    }
+}
