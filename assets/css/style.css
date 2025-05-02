@@ -233,7 +233,7 @@ line-height: 1.7;
     
     .amenities_item{
         position: relative;
-    padding: 0.5em 0 0.5em 1.5em;  /* sangrado para el punto */
+    padding: 0.5em 0 0.5em 1.5em;  
     font-size: 1rem;
     line-height: 1.5;
     }
@@ -290,7 +290,7 @@ line-height: 1.7;
 
 
     .location_card{
-        flex-direction: row; /* sigue apilado en tablet */
+        flex-direction: row; 
         width: 100%;  
         margin: 60px 20px;
     }
