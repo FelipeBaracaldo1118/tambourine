@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  let current = 0;  // índice de la slide activa
+  let current = 0;  // indice de la slide activa
 
   
   const section   = document.getElementById('slider_location');
@@ -70,6 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(current);
   });
 
-  // 5) Inicializa en la primera slide
+  // Inicializa en la primera slide
   showSlide(current);
 });
